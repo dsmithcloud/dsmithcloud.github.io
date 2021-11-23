@@ -20,6 +20,7 @@ avatar: https://avatars.githubusercontent.com/u/17909720?s=400&u=8a344feb99d534a
 remote_theme: pages-themes/midnight@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
+theme: jekyll-remote-theme
 
 # Includes an icon in the footer for each username you enter
 footer-links:
@@ -91,4 +92,3 @@ exclude:
   - README.md
   - CNAME
 
-#theme: jekyll-theme-midnight
