@@ -31,7 +31,7 @@ footer-links:
   instagram:
   linkedin: davidsmith71
   pinterest:
-  rss: # just type anything here for a working RSS icon
+  rss: rss # just type anything here for a working RSS icon
   twitter: dsmithcloud
   stackoverflow: users/10146202/david-smith # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: channel/UCbLXw_SAGQ775mymqZfnu5w # channel/<your_long_string> or user/<user-name>
@@ -47,7 +47,7 @@ google_analytics:
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: dsmithcloud.github.io
+url: www.davidsmith.cloud
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
@@ -91,4 +91,4 @@ exclude:
   - README.md
   - CNAME
 
-theme: jekyll-theme-midnight
+#theme: jekyll-theme-midnight
