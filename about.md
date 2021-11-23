@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I'm a Cloud Solutions Architect at Microsoft with 25+ years experience deploying and managing Microsoft technologies - focusing now on Azure Infrastructure.
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+Hosted using [GitHub Pages](https://pages.github.com/)
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[david@davidsmith.cloud](mailto:david@davidsmith.cloud)
