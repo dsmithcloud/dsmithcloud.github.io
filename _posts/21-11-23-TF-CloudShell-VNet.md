@@ -5,7 +5,9 @@ title: Terraform Module To Deploy Cloud Shell With VNet Integration
 
 I've written a reusable Terraform Module for easily deploying Cloud Shell VNet Integration.  
 
-For the Microsoft-provided ARM template, see [this link](https://github.com/Azure/azure-quickstart-templates/blob/master/demos/cloud-shell-vnet/azuredeploy.json).
+You can find the module in my GitHub repo [here](https://github.com/dsmithcloud/tf-cloudshell-vnet).
+
+For the Microsoft-provided ARM template version, see [this link](https://github.com/Azure/azure-quickstart-templates/blob/master/demos/cloud-shell-vnet/azuredeploy.json) instead.
 
 # Supported Regions
 **Note**: Cloud Shell VNet integration is only supported in the following regions as of this writing:
@@ -14,7 +16,26 @@ For the Microsoft-provided ARM template, see [this link](https://github.com/Azur
 
 # Usage
 
-To use this module
+This module will deploy all of the requisite resources to support connecting cloud shell to your virtual network.  All resources are deployed into the same Resource Group as the existing virtual network.
+
+To use this module you must have an existing vnet already deployed - or you can deploy one as part of your terraform repo - just reference that new vnet in the module parameters, and include a depends_on block.
+
+The module deployes the following resource:
+
++ **Container Subnet** - adds an additional subnet to the existing vnet for the cloud shell ACI to connect to.  This subnet will have service endpoints enabled for "Microsoft.Storage" and will be delegated for "Microsoft.ContainerInstance/containerGroups".
++ **Relay Subnet** - adds an additonal subnet to the existing vnet for the relay namespace to connect to.
++ **Network Profile** - Creates a network profile and associated NIC and attaches it to the Container Subnet.
++ **Relay Namespace** - creates a relay namespace with a "Standard" SKU.
++ **Role Assignments** - Makes two RBAC role assignments:
+    - _networkRoleDefinition_ - Assigns the Built-In networkRoleDefinition to the network profile that is created by the module.
+    - _contributorRoleDefinition_ - Assigns the Built-In contributorRoleDefinition to the relay namespace that is created by the module.
++ **Private Endpoint** - Creates a Private Endpoint resource in the relay subnet that's created by this module.  It then is associated with the Relay Namespace that is also created by this module.
++ **Private DNS Zone** - Creates a private dns zone named 'privatelink.servicebus.windows.net' and links this zone to the existing virtual network.
+    - _DNS A Record_ - Creates an A record in the newly created DNS zone that points to the IP address of the newly created private endpoint.
++ **Storage Account** - creates a storage account enabled for LRS and TLS1.2.  The storage account firewall is then enabled to only accept traffic from the Container Subnet created by this module.
++ **Tags** - This module will assign user-provided tags to all resources if included in the module block.  However, the storage account will always be assigned the following tags:
+    - "ms-resource-usage" = "azure-cloud-shell"
+
 
 ## Example
 
