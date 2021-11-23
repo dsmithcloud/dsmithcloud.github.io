@@ -12,7 +12,7 @@ For the Microsoft-provided ARM template version, see [this link](https://github.
 # Supported Regions
 **Note**: Cloud Shell VNet integration is only supported in the following regions as of this writing:
 
-'westus,southcentralus,eastus,northeurope,westeurope,centralindia,southeastasia,westcentralus,eastus2euap,centraluseuap'
+'westus, southcentralus, eastus, northeurope, westeurope, centralindia, southeastasia, westcentralus, eastus2euap, centraluseuap'
 
 # Usage
 
