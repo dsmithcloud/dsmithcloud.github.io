@@ -2,10 +2,11 @@
 layout: post
 title: Prestage Azure Cloud Shell Resources and User Settings via API
 ---
+## The Problem:
 
 One of my customers recently asked me if it's possible to pre-stage the required resources for Azure Cloud Shell ahead of time for a large number of users. They wanted to make Cloud Shell available to them, but they didn't want the users to have to understand how to create a storage account and file share, or how to connect a Cloud Shell session to a virtual network.
 
-## The Solution
+## The Solution:
 
 ### Part 1: The Storage Account and File Share
 
