@@ -5,11 +5,7 @@ title: Terraform Module To Deploy Cloud Shell With VNet Integration
 
 I've written a reusable Terraform Module for easily deploying Cloud Shell VNet Integration.  
 
-<<<<<<< HEAD
 You can find the module in my GitHub repo [here](https://github.com/dsmithcloud/terraform-azurerm-cloudshell-vnet) or in the Terriform Registry [here](https://registry.terraform.io/modules/dsmithcloud/cloudshell-vnet/azurerm/latest).
-=======
-You can find the module in my GitHub repo [here](https://github.com/dsmithcloud/terraform-azurerm-cloudshell-vnet) or in the Terriform Registry [here](https://registry.terraform.io/namespaces/dsmithcloud///latest).
->>>>>>> c05c7f11422232425d23febdaead945a86f2675b
 
 This module is based on the source Microsoft-provided ARM template version [here](https://github.com/Azure/azure-quickstart-templates/blob/master/demos/cloud-shell-vnet/azuredeploy.json).
 
