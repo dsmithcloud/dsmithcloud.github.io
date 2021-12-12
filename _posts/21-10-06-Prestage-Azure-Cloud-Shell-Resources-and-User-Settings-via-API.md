@@ -2,11 +2,11 @@
 layout: post
 title: Prestage Azure Cloud Shell Resources and User Settings via API
 ---
-## The Problem:
+## The Problem
 
 One of my customers recently asked me if it's possible to pre-stage the required resources for Azure Cloud Shell ahead of time for a large number of users. They wanted to make Cloud Shell available to them, but they didn't want the users to have to understand how to create a storage account and file share, or how to connect a Cloud Shell session to a virtual network.
 
-## The Solution:
+## The Solution
 
 ### Part 1: The Storage Account and File Share
 
@@ -40,35 +40,27 @@ First, create a JSON file with your desired settings using the samples below.
 
 default.json:
 
-{% gist 860bf5dadb5c955d1ea1ede2c7a138bf %}
+{% gist 998c4fa5a53400acd6e36ab67d71c74d default.json %}
 
 #### If you want a Cloud Shell session connected to a vnet
 
 Isolated-Vnet.json:
 
-{% gist fb7b5dc709a6f45ba8a95cf65489f240 %}
+{% gist 998c4fa5a53400acd6e36ab67d71c74d Isolated-Vnet.json %}
 
 _Keep in mind, if you use the Isolated Vnet option, the Network Profile, Relay and Storage Profile must already exist._
 
 Then, create run the following Azure CLI commands from a bash shell:
 
-```bash
-az login
-token="Bearer $(az account get-access-token | jq -r .accessToken)"
-Uri="https://management.azure.com/providers/Microsoft.Portal/usersettings/cloudconsole?api-version=2020-04-01-preview"
-```
+{% gist 998c4fa5a53400acd6e36ab67d71c74d get-bearer-token.sh %}
 
 This command will show you what the current cloud shell settings are for the user:
 
-```bash
-az rest --uri $Uri --method get --headers Authorization=$token --headers ContentType="application/json"
-```
+{% gist 998c4fa5a53400acd6e36ab67d71c74d show-current-user-settings.sh %}
 
 This command will set the cloud shell settings for the user based on the json file you feed into the body parameter:
 
-```bash
-az rest --uri $Uri --method put --headers Authorization=$token --headers ContentType="application/json" --body @default.json
-```
+{% gist 998c4fa5a53400acd6e36ab67d71c74d set-user-settings.sh %}
 
 The **ONLY** drawback to this solution is that unlike most ARM resources, this API call determines which user to update based on the identity of the caller issuing the update command. (i.e., there’s only one ‘/userSettings’ URL which only reads and modifies the settings of the user principal who calls it.) Therefore, User A can’t change user B’s settings for them, each user can only change their own settings - at least as of today. Microsoft doesn’t have anything on the roadmap to address this as of the date of this blog post.
 
