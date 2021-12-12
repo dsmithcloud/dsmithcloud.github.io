@@ -40,58 +40,13 @@ First, create a JSON file with your desired settings using the samples below.
 
 default.json:
 
-```json
-{
-  "properties": {
-    "preferredOsType": "Linux",
-    "preferredLocation": "<your-chosen-region>",
-    "storageProfile": {
-      "storageAccountResourceId": "/subscriptions/<your-subscription-id>/resourcegroups/<your-resource-group>/providers/Microsoft.Storage/storageAccounts/<your-storage-account-name>",
-      "fileShareName": "<your-preferred-share-name>",
-      "diskSizeInGB": 5
-    },
-    "terminalSettings": {
-      "fontSize": "Medium",
-      "fontStyle": "Monospace"
-    },
-    "networkType": "Default"
-  }
-}
-```
+{% gist 860bf5dadb5c955d1ea1ede2c7a138bf %}
 
 #### If you want a Cloud Shell session connected to a vnet
 
 Isolated-Vnet.json:
 
-```json
-{
-  "properties": {
-    "networkType": "Isolated",
-    "preferredLocation": "westus",
-    "preferredOsType": "Linux",
-    "preferredShellType": "bash",
-    "storageProfile": {
-      "diskSizeInGB": 5,
-      "fileShareName": "smithdavid-shell",
-      "storageAccountResourceId": "/subscriptions/<your-subscription-id>/resourcegroups/<your-resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account-name>"
-    },
-    "terminalSettings": {
-      "fontSize": "Medium",
-      "fontStyle": "Monospace"
-    },
-    "vnetSettings": {
-      "isolatedStorageProfile": {
-        "diskSizeInGB": 5,
-        "fileShareName": "smithdavid-shell",
-        "storageAccountResourceId": "/subscriptions/<your-subscription-id>/resourcegroups/<your-resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account-name>"
-      },
-      "location": "westus",
-      "networkProfileResourceId": "/subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group>/providers/Microsoft.Network/networkProfiles/<network-profile-name>",
-      "relayNamespaceResourceId": "/subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group>/providers/Microsoft.Relay/namespaces/<relay-namespace>"
-    }
-  }
-}
-```
+{% gist fb7b5dc709a6f45ba8a95cf65489f240 %}
 
 _Keep in mind, if you use the Isolated Vnet option, the Network Profile, Relay and Storage Profile must already exist._
 
