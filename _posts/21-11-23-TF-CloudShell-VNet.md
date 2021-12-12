@@ -39,20 +39,7 @@ The module deployes the following resource:
 
 ## Example
 
-```terraform
-module "cloudshell-vnet" 
-  source                       = "git::https://github.com/dsmithcloud/tf-cloudshell-vnet.git"
-  existing-vnet-name           = "vnet-core-ussc-10.0.0.0_24"
-  existing-vnet-resource-group = "rg-global-core-network"
-  ACI-OID                      = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-  container-subnet-prefix      = ["10.0.0.96/27"]
-  relay-subnet-prefix          = ["10.0.0.128/26"]
-  relay-namespace-name         = "cshrelay"
-  storageaccount-name          = "storageacctname"
-  tags                         = {"key"="value"}
-  depends_on                   = [azurerm_resource_group.my-rg-name]
-}
-```
+{% gist a5799ba0265e125268f5475ea3fa32c8 module.tf %}
 
 ## Parameters
 
@@ -64,9 +51,7 @@ module "cloudshell-vnet"
 
 **ACI-OID**: (Required) Azure Container Instance OID.  You can obtain this value by running the following command:
 
-```powershell
-Get-AzADServicePrincipal -DisplayNameBeginsWith 'Azure Container Instance'
-```
+{% gist a5799ba0265e125268f5475ea3fa32c8 find-aci-oid.ps1 %}
 
 **container-subnet-name**: (Optional) the name to be assigned to the cloudshell container subnet (default     = "cloudshellsubnet")
 
