@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Privacy
-permalink: /privacy/
+permalink: /Privacy/
 ---
 
 # Who we are
