@@ -1,3 +1,9 @@
+---
+layout: page
+title: Privacy
+permalink: /privacy/
+---
+
 # Who we are
 Our website address is: https://www.davidsmith.cloud.
 
