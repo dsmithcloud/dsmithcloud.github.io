@@ -8,7 +8,7 @@ I'm a Cloud Solutions Architect at Microsoft with 25+ years experience deploying
 
 ### More Information
 
-Hosted using [GitHub Pages](https://pages.github.com/)
+Hosted using [GitHub Pages](https://pages.github.com/) and [GitHub Gist](https://gist.github.com)
 
 ### Contact me
 
