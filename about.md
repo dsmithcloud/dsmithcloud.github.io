@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<img src="/images/dsmithcloud_logo_large.jpg" alt="davidsmith.cloud logo" style="height: 100px; width:100px;"/>
+<img src="images/10th-Magnitude0727-5787-fave-navy.jpg" alt="davidsmith.cloud logo" style="height: 300px; width:300px;"/>
 
 I'm a Cloud Solutions Architect at Microsoft with 25+ years experience deploying and managing Microsoft technologies - focusing now on Azure Infrastructure.
 
