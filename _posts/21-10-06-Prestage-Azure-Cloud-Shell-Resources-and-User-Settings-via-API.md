@@ -10,9 +10,11 @@ One of my customers recently asked me if it's possible to pre-stage the required
 
 ### Part 1: The Storage Account and File Share
 
-Pre-staging the Storage Account and File share is the easy part. That can be done via any Infrastructure-as-Code (IaC) tools. Think Bicep, Terraform, ARM Templates, etc. There are plenty of examples of this on the web.
+Pre-staging the Storage Account and File share is the easy part. That can be done via any Infrastructure-as-Code (IaC) tools. Think Bicep, Terraform, ARM Templates, etc. There are plenty of examples of this on the web.  
 
 Microsoft provides an ARM Template to do this in their GitHub quickstarts repo [here](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.storage/storage-file-share).
+
+UPDATE: I wrote a [Terraform Module](https://registry.terraform.io/modules/dsmithcloud/cloudshell-vnet/azurerm/latest) to do this for you!
 
 ### Part 2: The User Settings
 
