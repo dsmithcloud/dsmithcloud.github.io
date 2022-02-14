@@ -16,4 +16,4 @@ Hosted using [GitHub Pages](https://pages.github.com/) and [GitHub Gist](https:/
 
 ### Privacy
 
-See our [Privacy](https://www.davidsmith.cloud/privacy) page here: https://www.davidsmith.cloud/privacy
+See our [Privacy](https://www.davidsmith.cloud/privacy/) page here: https://www.davidsmith.cloud/privacy/
